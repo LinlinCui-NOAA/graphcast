@@ -70,7 +70,7 @@ class GetEra5Data:
         tp_6hr = calculate_6hr_accumulation(ds.tp)
 
         dates = np.arange(
-            ds.time[0].values,
+            ds.time[0].values + np.timedelta64(6, 'h'), #The 6-hr ds will start from hr=6 to get the 6-hr tp
             ds.time[-1].values,
             np.timedelta64(6, 'h')
         )
